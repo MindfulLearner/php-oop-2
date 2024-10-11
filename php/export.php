@@ -5,12 +5,16 @@ require_once __DIR__ . '/instances.php';
 $productsArray = [];
 
 foreach ($products as $product) {
+  $category = $product->getCategory();
     $productsArray[] = [
         'label' => $product->getLabel(),
         'images' => $product->getImages(),
         'price' => $product->getPrice(),
         'type' => $product->getType(),
-        'category' => $product->getCategory(),
+        'category' => [
+            'animal' => $category->getAnimal(),
+            'icon' => $category->getAnimalIcon() 
+        ],
     ];
 }
 

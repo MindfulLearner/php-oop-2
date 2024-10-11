@@ -57,6 +57,14 @@ class Category {
     $this->animal = $animal;
     $this->animalIcon = $animalIcon;
   }
+    public function getAnimal(): string {
+        return $this->animal;
+    }
+
+    public function getAnimalIcon(): string {
+        return $this->animalIcon;
+    }
+
 }
 
 function prettyVarDump($var) {
