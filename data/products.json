@@ -1,0 +1,44 @@
+[
+    {
+        "label": "Croccantini",
+        "images": "https:\/\/baiuland.it\/bianchi\/wp-content\/uploads\/2019\/09\/croccantini.png",
+        "price": 2.5,
+        "type": "food",
+        "category": {}
+    },
+    {
+        "label": "Pallina Gioco",
+        "images": "https:\/\/m.media-amazon.com\/images\/I\/71AvbGKoyoL._AC_UF894,1000_QL80_.jpg",
+        "price": 1.2,
+        "type": "toy",
+        "category": {}
+    },
+    {
+        "label": "Tiragraffi",
+        "images": "https:\/\/merchandising.givovashopping.it\/wp-content\/uploads\/2022\/07\/Pallone-Custom_Reggina_.jpg",
+        "price": 15.99,
+        "type": "accessory",
+        "category": {}
+    },
+    {
+        "label": "Scatolette Umido",
+        "images": "https:\/\/encrypted-tbn0.gstatic.com\/images?q=tbn:ANd9GcRvGPa-L3b9eBHugro-CPkFIObqactv2c_ybg&s",
+        "price": 3.8,
+        "type": "food",
+        "category": {}
+    },
+    {
+        "label": "Cuccia Morbida",
+        "images": "https:\/\/www.satur.it\/media\/catalog\/product\/cache\/49dc14e98c54e910c6df568e2d317dc4\/c\/e\/ce52763e7ac9b73f4a3f566ad07ca5cd28cae64e4811eade3656536e91a382f4.jpeg",
+        "price": 25,
+        "type": "bed",
+        "category": {}
+    },
+    {
+        "label": "Guinzaglio",
+        "images": "https:\/\/www.ilverdemondo.it\/public\/catalog\/product\/medium\/guinzaglio-per-cani-flexi-000.jpg",
+        "price": 9.5,
+        "type": "accessory",
+        "category": {}
+    }
+]

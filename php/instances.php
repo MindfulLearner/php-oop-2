@@ -16,12 +16,6 @@ $products = [
   $guinzaglio = new Products('Guinzaglio', 'https://www.ilverdemondo.it/public/catalog/product/medium/guinzaglio-per-cani-flexi-000.jpg', 9.50, 'accessory', $categories[0])
 ];
 
-
-
-
-
 prettyVarDump($products);
-
-
 
 ?>
