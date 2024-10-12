@@ -51,11 +51,31 @@ function createCard(product) {
   return card;
 }
 
+let totalSum = 0;
+// inside of cart will be 'id' no id non lho messo non ho voglia di modificare tutto., 'name', 'price'
+let cart = [];
+
 // gestisce il click su una card
 function addCartProduct(product) {
   console.log(product);
+
+  console.log(product.label);
   console.log(product.price);
+
+  let cont = ({ "label": product.label, "price": product.price });
+  cart.push(cont);
+  totalSum += product.price;
+  // stampo array con il carrello
+  console.log(cart);
+  console.log(`totale del carrello: ${totalSum.toFixed(2)}`)
+
+
+  let priceClicked = product.price;
+
+  // creazione cart
+
 }
+
 
 // creo un div per il titolo del prodotto (label)
 function createLabelDiv(label) {
