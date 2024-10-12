@@ -11,9 +11,23 @@
 <body>
 
   <div class="container centered">
-    <div class="card-container" id="card-container">
-      <!-- verra messo qui tramite js  -->
-    </div>
+    <form class="form-container" id="form-container">
+      <input type="text" name="credit" class="input" placeholder="credit card" required>
+      <input type="text" name="email" class="input" placeholder="email" required>
+      <div class="num-cont">
+        <input type="number" name="day" min="1" max="30" placeholder="Day" required> Day
+        <input type="number" name="month" min="1" max="12" placeholder="Month" required> Month
+      </div>
+      <button type="submit" class="submit-button">Accedi</button>
+    </form>
+    <p id="logMein">ciao</p>
+  </div>
+
+
+
+  <div class="card-container" id="card-container">
+    <!-- verra messo qui tramite js  -->
+  </div>
   </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

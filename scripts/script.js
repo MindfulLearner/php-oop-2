@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function createCard(product) {
   const card = document.createElement("div");
   card.classList.add('card');
-  card.addEventListener("click", () => handleCardClick(product));
+  card.addEventListener("click", () => addCartProduct(product));
 
   // creo un div per il titolo prodotto (label)
   const labelDiv = createLabelDiv(product.label);
@@ -52,8 +52,9 @@ function createCard(product) {
 }
 
 // gestisce il click su una card
-function handleCardClick(product) {
+function addCartProduct(product) {
   console.log(product);
+  console.log(product.price);
 }
 
 // creo un div per il titolo del prodotto (label)
@@ -110,3 +111,69 @@ function createCategoryDiv(category) {
   return categoryDiv;
 }
 
+function logIn(event) {
+  const logMein = document.getElementById("logMein");
+  if (!validateForm(form)) {
+    alert('failed validation bro');
+    return;
+  }
+  getData(form);
+  logMein.textContent = `inviato dati`;
+  //reset form
+  form.reset();
+  event.preventDefault();
+}
+
+//validation
+function validateForm(form) {
+  const formData = new FormData(form);
+  const credit = formData.get('credit');
+  const email = formData.get('email');
+  const day = parseInt(formData.get('day'), 10);
+  const month = parseInt(formData.get('month'), 10);
+
+  //credit card validation
+  if (credit.length !== 4 || !/^\d+$/.test(credit)) {
+    alert('carta di credito non valida o hai inserito piu numeri o hai inserito un carattere non valido');
+    return false;
+  }
+
+  // controll email
+  if (!validateEmail(email)) {
+    alert('inserisci email valida');
+    return false;
+  }
+
+  //  controllo data
+  const currentDate = new Date();
+  const currentDay = currentDate.getDate();
+  const currentMonth = currentDate.getMonth() + 1;
+
+  if (month < currentMonth || (month === currentMonth && day < currentDay)) {
+    alert('giorno non valido perche maggiore di quelal di oggi');
+    return false;
+  }
+
+  return true;
+}
+
+// get data 
+function getData(form) {
+  const formData = new FormData(form);
+
+  for (const [key, value] of formData.entries()) {
+    console.log(`${key}: ${value}`);
+  }
+
+  const dataObject = Object.fromEntries(formData);
+  console.log(dataObject);
+}
+
+// controllo email presa da qualche parte su overflow
+function validateEmail(email) {
+  const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  return emailPattern.test(email);
+}
+
+const form = document.getElementById("form-container");
+form.addEventListener("submit", logIn);
