@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   axios
-    .get('http://192.168.1.101:8080/data/products.json', {
+    .get('http://192.168.1.101:8080/php/getApiProducts.php', {
       headers: {
         'Content-Type': 'application/json'
       }
@@ -157,6 +157,12 @@ function logIn(event) {
     .then((response) => {
       console.log(response);
       console.log(response.data);
+      if (response.data.status === 'success') {
+        console.log("successo");
+        getDiscountedData();
+      } else {
+        console.log("non sei loggato bro");
+      }
     })
     .catch((error) => {
       console.log(error);
@@ -168,6 +174,33 @@ function logIn(event) {
   form.reset();
   event.preventDefault();
 }
+
+
+const getDiscountedData = () => {
+  axios
+    .get('http://192.168.1.101:8080/php/postAPIDiscounted.php', {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then((response) => {
+      const products = response.data;
+      const cardContainer = document.querySelector("#card-container");
+      cardContainer.innerHTML = '';
+
+      // Itero su ogni prodotto e creo una card
+      products.forEach(product => {
+        const card = createCard(product);
+        card.addEventListener("click", () => addCartProduct(product));
+        cardContainer.appendChild(card);
+      });
+
+    })
+    .catch((error) => {
+      console.error('errre:', error);
+    });
+
+};
 
 //validation
 function validateForm(form) {
@@ -226,6 +259,21 @@ form.addEventListener("submit", logIn);
 
 function buyCart(event) {
   // logica copra quando mando un axio post voglio ricevere una risposta di conferma
+  axios
+    .post('http://192.168.1.101:8080/php/postBuy.php', cart)
+
+    .then((response) => {
+      console.log(response);
+      console.log(response.data);
+      if (response.data.status === 'success') {
+        console.log("comprato");
+      } else {
+        console.log("non sei loggato bro");
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 
 
 
@@ -233,6 +281,7 @@ function buyCart(event) {
   console.log('ora array vuoto');
   let totalPrice = document.querySelector("#totalPrice");
   totalPrice.textContent = `00.00`
+  totalSum = 0;
   const arrayContainer = document.querySelector("#arrayCart");
   arrayContainer.innerHTML = '';
 }

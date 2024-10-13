@@ -42,8 +42,7 @@ foreach ($products as $product) {
 $jsonDiscountedData = json_encode($productsDiscountedArray, JSON_PRETTY_PRINT);
 file_put_contents('../data/discountedProducts.json', $jsonDiscountedData);
 
-echo $jsonData;
-echo "Dati salvati in products.json";
+echo "Dati salvati in products.json e discounted.json";
 
 ?>
 
