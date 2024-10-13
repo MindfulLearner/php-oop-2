@@ -69,12 +69,19 @@ function addCartProduct(product) {
   console.log(cart);
   console.log(`totale del carrello: ${totalSum.toFixed(2)}`)
 
-
-  let priceClicked = product.price;
+  // price total logic
+  let totalPrice = document.querySelector("#totalPrice");
+  totalPrice.textContent = totalSum.toFixed(2);
 
   // creazione cart
+  const arrayCartContainer = document.querySelector("#arrayCart");
+  const card = createCard(product);
+  arrayCartContainer.appendChild(card);
 
 }
+
+
+
 
 
 // creo un div per il titolo del prodotto (label)

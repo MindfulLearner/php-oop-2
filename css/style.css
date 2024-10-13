@@ -84,3 +84,31 @@
   font-size: 16px;
   cursor: pointer;
 }
+
+
+/* array card */
+
+.carrello {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.arrayCart {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+
+}
+
+#totalPrice {
+
+  font-size: 3em;
+}
+
+#totalPrice::after {
+  content: "€";
+  font-size: 0.8em;
+  margin-left: 0.1em;
+}
