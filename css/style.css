@@ -88,6 +88,10 @@
 
 /* array card */
 
+.card.in-cart {
+  background-color: #d3f9d8;
+}
+
 .carrello {
   display: flex;
   justify-content: center;

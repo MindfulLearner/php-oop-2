@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Itero su ogni prodotto e creo una card
       products.forEach(product => {
         const card = createCard(product);
+        card.addEventListener("click", () => addCartProduct(product));
         cardContainer.appendChild(card);
       });
 
@@ -26,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
 function createCard(product) {
   const card = document.createElement("div");
   card.classList.add('card');
-  card.addEventListener("click", () => addCartProduct(product));
 
   // creo un div per il titolo prodotto (label)
   const labelDiv = createLabelDiv(product.label);
@@ -76,6 +76,7 @@ function addCartProduct(product) {
   // creazione cart
   const arrayCartContainer = document.querySelector("#arrayCart");
   const card = createCard(product);
+  card.classList.add("in-cart");
   arrayCartContainer.appendChild(card);
 
 }
@@ -140,12 +141,29 @@ function createCategoryDiv(category) {
 
 function logIn(event) {
   const logMein = document.getElementById("logMein");
+  const form = event.target;
   if (!validateForm(form)) {
     alert('failed validation bro');
     return;
   }
-  getData(form);
+  //returnera data
+  const data = getData(form);
+  console.log(data);
+  // axios logic post and validatefrom php
   logMein.textContent = `inviato dati`;
+  axios
+    .post('http://192.168.1.101:8080/php/postLogIn.php', data)
+
+    .then((response) => {
+      console.log(response);
+      console.log(response.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
+
+
   //reset form
   form.reset();
   event.preventDefault();
@@ -191,9 +209,9 @@ function getData(form) {
   for (const [key, value] of formData.entries()) {
     console.log(`${key}: ${value}`);
   }
-
   const dataObject = Object.fromEntries(formData);
-  console.log(dataObject);
+
+  return dataObject;
 }
 
 // controllo email presa da qualche parte su overflow
@@ -204,3 +222,20 @@ function validateEmail(email) {
 
 const form = document.getElementById("form-container");
 form.addEventListener("submit", logIn);
+
+
+function buyCart(event) {
+  // logica copra quando mando un axio post voglio ricevere una risposta di conferma
+
+
+
+  cart = [];
+  console.log('ora array vuoto');
+  let totalPrice = document.querySelector("#totalPrice");
+  totalPrice.textContent = `00.00`
+  const arrayContainer = document.querySelector("#arrayCart");
+  arrayContainer.innerHTML = '';
+}
+
+const buyForm = document.getElementById("compralo");
+buyForm.addEventListener("click", buyCart); 

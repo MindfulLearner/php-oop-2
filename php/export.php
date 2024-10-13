@@ -22,6 +22,26 @@ $jsonData = json_encode($productsArray, JSON_PRETTY_PRINT);
 
 file_put_contents('../data/products.json', $jsonData);
 
+$productsDiscountedArray = [];
+
+foreach ($products as $product) {
+  $discountedPrice = $product->getPrice() * 0.80;
+  $product -> setPrice($discountedPrice);
+  $category = $product->getCategory();
+    $productsDiscountedArray[] = [
+        'label' => $product->getLabel(),
+        'images' => $product->getImages(),
+        'price' => $product->getPrice(),
+        'type' => $product->getType(),
+        'category' => [
+            'animal' => $category->getAnimal(),
+            'icon' => $category->getAnimalIcon() 
+        ],
+    ];
+}
+$jsonDiscountedData = json_encode($productsDiscountedArray, JSON_PRETTY_PRINT);
+file_put_contents('../data/discountedProducts.json', $jsonDiscountedData);
+
 echo $jsonData;
 echo "Dati salvati in products.json";
 

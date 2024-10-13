@@ -28,6 +28,10 @@ class Products {
         return $this->price;
     }
 
+    public function setPrice($price) {
+      $this->price = $price;
+    }
+
     public function getType() {
         return $this->type;
     }

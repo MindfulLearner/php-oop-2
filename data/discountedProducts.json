@@ -1,0 +1,62 @@
+[
+    {
+        "label": "Croccantini",
+        "images": "https:\/\/baiuland.it\/bianchi\/wp-content\/uploads\/2019\/09\/croccantini.png",
+        "price": 2,
+        "type": "food",
+        "category": {
+            "animal": "cani",
+            "icon": "https:\/\/cdn-icons-png.flaticon.com\/512\/616\/616408.png"
+        }
+    },
+    {
+        "label": "Pallina Gioco",
+        "images": "https:\/\/m.media-amazon.com\/images\/I\/71AvbGKoyoL._AC_UF894,1000_QL80_.jpg",
+        "price": 0.96,
+        "type": "toy",
+        "category": {
+            "animal": "cani",
+            "icon": "https:\/\/cdn-icons-png.flaticon.com\/512\/616\/616408.png"
+        }
+    },
+    {
+        "label": "Tiragraffi",
+        "images": "https:\/\/merchandising.givovashopping.it\/wp-content\/uploads\/2022\/07\/Pallone-Custom_Reggina_.jpg",
+        "price": 12.792000000000002,
+        "type": "accessory",
+        "category": {
+            "animal": "gatti",
+            "icon": "https:\/\/cdn-icons-png.flaticon.com\/512\/616\/616430.png"
+        }
+    },
+    {
+        "label": "Scatolette Umido",
+        "images": "https:\/\/encrypted-tbn0.gstatic.com\/images?q=tbn:ANd9GcRvGPa-L3b9eBHugro-CPkFIObqactv2c_ybg&s",
+        "price": 3.04,
+        "type": "food",
+        "category": {
+            "animal": "gatti",
+            "icon": "https:\/\/cdn-icons-png.flaticon.com\/512\/616\/616430.png"
+        }
+    },
+    {
+        "label": "Cuccia Morbida",
+        "images": "https:\/\/www.satur.it\/media\/catalog\/product\/cache\/49dc14e98c54e910c6df568e2d317dc4\/c\/e\/ce52763e7ac9b73f4a3f566ad07ca5cd28cae64e4811eade3656536e91a382f4.jpeg",
+        "price": 20,
+        "type": "bed",
+        "category": {
+            "animal": "cani",
+            "icon": "https:\/\/cdn-icons-png.flaticon.com\/512\/616\/616408.png"
+        }
+    },
+    {
+        "label": "Guinzaglio",
+        "images": "https:\/\/www.ilverdemondo.it\/public\/catalog\/product\/medium\/guinzaglio-per-cani-flexi-000.jpg",
+        "price": 7.6000000000000005,
+        "type": "accessory",
+        "category": {
+            "animal": "cani",
+            "icon": "https:\/\/cdn-icons-png.flaticon.com\/512\/616\/616408.png"
+        }
+    }
+]
