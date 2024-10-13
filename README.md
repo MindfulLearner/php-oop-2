@@ -1,4 +1,8 @@
 # php-oop-2
+UPDATED!!!
+![image](https://github.com/user-attachments/assets/0b3b2f65-f71d-42b1-adb7-c3288cd6f179)
+
+
 ### MAKE ISSUE!
 Task da fare e spiegazioni sono in ISSUE
 
@@ -9,6 +13,6 @@ cibo estensione -> prodotto
 questo c'e':
 categoria tanto a prodotto, una composizione a prodotto 
 
-![image](https://github.com/user-attachments/assets/edc045e4-cc1e-4ecb-8ea5-f35cfd5337c0)
+
 
 
