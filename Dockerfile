@@ -15,4 +15,7 @@ RUN mkdir -p /var/www/html/data && \
     a2enconf custom.conf && \
     a2enmod rewrite
 
+
+RUN docker-php-ext-install mysqli
+
 EXPOSE 80

@@ -19,12 +19,11 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root_password
       MYSQL_DATABASE: university_db
-      MYSQL_USER: university_user
-      MYSQL_PASSWORD: user_password
     volumes:
       - mysql-data:/var/lib/mysql
     networks:
       - db-network
+
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
@@ -37,6 +36,7 @@ services:
       - mysql-db
     networks:
       - db-network
+
 
 volumes:
   mysql-data:
