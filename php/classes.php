@@ -5,10 +5,10 @@ class Products {
   private string $images; // src chee verra messo nellhtml
   private float $price; // prezzo
   /*private string $type; // giochi, prodotti ...*/
-  use type;
+  private object $type;
   private Category $category; // cani o gatti o altro etcc..
 
-  public function __construct(string $label, string $images, float $price, string $type, Category $category) {
+  public function __construct(string $label, string $images, float $price, object $type, Category $category) {
     $this->label = $label;
     $this->images = $images;
     $this->price = $price;
@@ -33,9 +33,9 @@ class Products {
       $this->price = $price;
     }
 
-    /*public function getType() {*/
-    /*    return $this->type;*/
-    /*}*/
+    public function getType() {
+        return $this->type;
+    }
 
     public function getCategory() {
         return $this->category;
@@ -83,6 +83,33 @@ function prettyVarDump($var) {
   echo '<pre style="background: #f4f4f4; border: 1px solid #ccc; padding: 10px; border-radius: 5px; font-size: 14px; line-height: 1.5;">';
   var_dump($var);
   echo '</pre>';
+}
+
+
+// classi passte a composizione
+
+class Cibo {
+    public function getTypeName() {
+        return 'food';
+    }
+}
+
+class Giocattolo {
+    public function getTypeName() {
+        return 'toy';
+    }
+}
+
+class Accessorio {
+    public function getTypeName() {
+        return 'accessory';
+    }
+}
+
+class Cuccia {
+    public function getTypeName() {
+        return 'bed';
+    }
 }
 
 ?>

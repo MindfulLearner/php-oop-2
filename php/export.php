@@ -10,7 +10,7 @@ foreach ($products as $product) {
         'label' => $product->getLabel(),
         'images' => $product->getImages(),
         'price' => $product->getPrice(),
-        'type' => $product->getType(),
+        'type' => $product->getType()->getTypeName(),
         'category' => [
             'animal' => $category->getAnimal(),
             'icon' => $category->getAnimalIcon() 
@@ -32,13 +32,15 @@ foreach ($products as $product) {
         'label' => $product->getLabel(),
         'images' => $product->getImages(),
         'price' => $product->getPrice(),
-        'type' => $product->getType(),
+        'type' => $product->getType()->getTypeName(),
         'category' => [
             'animal' => $category->getAnimal(),
             'icon' => $category->getAnimalIcon() 
         ],
     ];
 }
+
+
 $jsonDiscountedData = json_encode($productsDiscountedArray, JSON_PRETTY_PRINT);
 file_put_contents('../data/discountedProducts.json', $jsonDiscountedData);
 

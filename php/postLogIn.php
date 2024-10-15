@@ -2,12 +2,16 @@
 session_start();
 
 $data = json_decode(file_get_contents('php://input'), true);
+include ../queris/mysqlLog.php;
 
 /*.post to postloginValidator.php*/
 /*  usero session anziche post o curl perche e' una roba assurda*/
 $_SESSION['successLogin'] = false;
 $_SESSION['dataReceivedLog'] = $data;
 
+// ho due idee qui... 
+// 1. faccio fare un do prima cosi fa prima tutta la sua cosa con post login...
+// 2. o usare include ... che contiene un funzione 
 
 // .get da posttLOGIN.php
 /*$successLogin = true;*/
