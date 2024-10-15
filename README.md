@@ -1,6 +1,7 @@
 # php-oop-2
 UPDTE!!! da sstemare un attimo logvalidator refactor piu visibile
-![image](https://github.com/user-attachments/assets/660dd295-e1db-4599-a97b-197a0209bd3f)
+![image](https://github.com/user-attachments/assets/e98550de-1477-46d6-abaf-b60f47601ca8)
+
 
 
 
