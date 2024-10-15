@@ -1,5 +1,5 @@
 # php-oop-2
-UPDTE!!!
+UPDTE!!! da sstemare un attimo logvalidator
 ![image](https://github.com/user-attachments/assets/3a3b52e0-50cf-4dbf-990a-732387da87d7)
 
 
